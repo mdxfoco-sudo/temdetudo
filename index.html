@@ -5,24 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Grupo VIP de Ofertas</title>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1233424312010019');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1233424312010019&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
 :root{
-  /* FUNDO MAIS CLARO / CONFIÁVEL */
   --bg1:#0f2a5c;
   --bg2:#163a7a;
   --card:#0e1630;
   --card2:#101b3a;
-
   --border:rgba(255,255,255,.10);
   --text:#ffffff;
   --muted:rgba(255,255,255,.78);
-
   --cta:#25D366;
   --ctaText:#07110b;
-
   --chip:rgba(255,255,255,.08);
   --chipBorder:rgba(255,255,255,.14);
-
   --accent:#8fb3ff;
 }
 
@@ -36,7 +51,6 @@ body{
     linear-gradient(160deg, var(--bg1), var(--bg2));
   min-height:100vh;
 }
-
 .container{max-width:560px;margin:auto;padding:20px}
 .box{
   background:linear-gradient(180deg, rgba(16,27,58,.92), rgba(14,22,48,.92));
@@ -45,8 +59,6 @@ body{
   padding:22px;
   box-shadow:0 18px 60px rgba(0,0,0,.35);
 }
-
-/* TOPO */
 .topline{
   display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
   margin-bottom:12px;font-size:12px;color:var(--muted)
@@ -55,54 +67,36 @@ body{
   background:var(--chip);
   border:1px solid var(--chipBorder);
   padding:8px 12px;border-radius:999px;
-  backdrop-filter: blur(6px);
 }
-
-h1{
-  font-size:24px;line-height:1.2;text-align:center;
-  margin:8px 0 10px;letter-spacing:-.2px
-}
-.sub{
-  text-align:center;font-size:14px;color:var(--muted);
-  margin:0 0 14px;line-height:1.45
-}
-
-/* BENEFÍCIOS */
-.value{display:grid;gap:10px;margin-bottom:14px}
+h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px;}
+.sub{text-align:center;font-size:14px;color:var(--muted);margin:0 0 18px;line-height:1.45}
+.value{display:grid;gap:10px;margin-bottom:18px}
 .item{
   background:rgba(255,255,255,.06);
   border:1px solid var(--border);
   border-radius:14px;
-  padding:12px;
-  display:flex;gap:10px;align-items:flex-start
+  padding:14px;
+  display:flex;gap:10px;align-items:center
 }
 .tick{
   width:22px;height:22px;border-radius:7px;
   background:rgba(37,211,102,.18);
   border:1px solid rgba(37,211,102,.28);
-  display:flex;align-items:center;justify-content:center;flex:0 0 22px;
-  margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
 }
-.item b{font-size:14px;display:block;margin-bottom:2px}
-.item span{font-size:13px;color:var(--muted);line-height:1.35}
-
-/* BOTÃO */
+.item b{font-size:14px}
 .btn{
   display:block;background:var(--cta);color:var(--ctaText);
   text-align:center;padding:16px;border-radius:14px;
   text-decoration:none;font-weight:900;letter-spacing:.4px;
-  margin:14px 0 6px;
-  box-shadow:0 12px 30px rgba(37,211,102,.25);
+  margin:18px 0 6px;
+  box-shadow:0 12px 30px rgba(37,211,102,.35);
 }
 .btn:active{transform:translateY(1px)}
-
-.small{ text-align:center;font-size:12px;color:var(--muted);margin:0 }
-.small strong{color:#fff}
-
-/* CONFIANÇA */
+.small{text-align:center;font-size:12px;color:var(--muted);margin:0}
 .trust{
   display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
-  margin:12px 0 10px
+  margin:14px 0
 }
 .chip{
   background:var(--chip);
@@ -110,123 +104,58 @@ h1{
   border-radius:999px;padding:8px 12px;
   font-size:12px;color:var(--muted)
 }
-
-/* MARKETPLACES */
 .market{
-  margin:10px 0 14px;
+  margin:12px 0 16px;
   padding:12px;
   border:1px dashed rgba(255,255,255,.18);
   border-radius:14px;
   background:rgba(255,255,255,.05);
 }
-.marketTitle{
-  font-size:12px;color:var(--muted);
-  text-align:center;margin:0 0 10px
-}
-.marketRow{
-  display:flex;flex-wrap:wrap;gap:8px;justify-content:center
-}
+.marketTitle{font-size:12px;color:var(--muted);text-align:center;margin:0 0 10px}
+.marketRow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .mtag{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 10px;border-radius:999px;
+  padding:8px 12px;border-radius:999px;
   background:rgba(0,0,0,.18);
   border:1px solid rgba(255,255,255,.12);
-  font-size:12px;color:rgba(255,255,255,.86);
+  font-size:12px;
 }
-.dotLogo{
-  width:10px;height:10px;border-radius:50%;
-  background:rgba(255,255,255,.55);
-  box-shadow:0 0 0 2px rgba(255,255,255,.10);
-}
-
-/* DIVISÓRIA */
-hr{border:0;border-top:1px solid var(--border);margin:18px 0}
-
-/* PROVAS */
-.proofTitle{text-align:center;font-size:14px;margin:0 0 6px}
-.proofSub{text-align:center;font-size:12px;color:var(--muted);margin:0 0 12px}
-
-/* SLIDER */
-.slider{
-  overflow:hidden;border-radius:14px;border:1px solid var(--border);
-  background:rgba(0,0,0,.18);
-}
+.slider{overflow:hidden;border-radius:14px;border:1px solid var(--border);}
 .slides{display:flex;transition:transform .5s ease}
-.slide{
-  min-width:100%;
-  display:flex;justify-content:center;
-  padding:16px 0
-}
-.slide img{
-  width:72%;
-  max-width:360px;
-  height:auto;
-  border-radius:12px;
-  box-shadow:0 12px 34px rgba(0,0,0,.35);
-  border:1px solid rgba(255,255,255,.10);
-}
-
-.dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);opacity:.6}
-.dot.active{background:var(--accent);opacity:1}
-
-.footer{
-  margin-top:16px;font-size:11px;text-align:center;
-  color:rgba(255,255,255,.72);line-height:1.55
-}
+.slide{min-width:100%;display:flex;justify-content:center;padding:16px 0}
+.slide img{width:72%;max-width:360px;border-radius:12px}
+.footer{margin-top:16px;font-size:11px;text-align:center;color:rgba(255,255,255,.72)}
 .footer a{color:var(--accent);text-decoration:none}
-.note{
-  margin-top:10px;
-  font-size:11px;color:rgba(255,255,255,.70);
-  text-align:center
-}
+@media(max-width:420px){h1{font-size:22px}.container{padding:14px}}
 </style>
 </head>
 
 <body>
 <div class="container">
   <div class="box">
-
     <div class="topline">
       <div class="badge">🎯 Ofertas no WhatsApp</div>
       <div class="badge">✅ 100% Gratuito</div>
     </div>
 
-    <h1>Entre no Grupo VIP<br>de Ofertas</h1>
+    <h1>Grupo VIP de Ofertas</h1>
 
     <p class="sub">
-      Promoções reais, cupons escondidos e ofertas relâmpago.<br>
-      Você entra, vê as ofertas e sai quando quiser.
+      Compre com desconto como nunca antes nos maiores sites de compra da internet.<br>
+      Cupons secretos que não são divulgados.
     </p>
 
     <div class="value">
-      <div class="item">
-        <div class="tick">✔</div>
-        <div>
-          <b>Promoções reais</b>
-          <span>Sem fake: só o que vale a pena.</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="tick">✔</div>
-        <div>
-          <b>Cupons escondidos</b>
-          <span>Aqueles que quase ninguém acha.</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="tick">✔</div>
-        <div>
-          <b>Ofertas relâmpago</b>
-          <span>Entrou, viu, aproveitou.</span>
-        </div>
-      </div>
+      <div class="item"><div class="tick">✔</div><b>Ofertas selecionadas</b></div>
+      <div class="item"><div class="tick">✔</div><b>Cupons secretos</b></div>
+      <div class="item"><div class="tick">✔</div><b>Oportunidades exclusivas</b></div>
     </div>
 
-    <a id="go" class="btn" href="#">ENTRAR NO GRUPO AGORA</a>
-    <p class="small" id="status">Redirecionamento automático em <strong>15s</strong>…</p>
+    <!-- Evento correto: clique/entrada no grupo -->
+    <a id="go" class="btn" href="#" onclick="fbq('trackCustom','JoinGroup');">
+      ACESSAR OFERTAS AGORA
+    </a>
+
+    <p class="small" id="status">Redirecionamento automático em <strong>25s</strong>…</p>
 
     <div class="trust">
       <div class="chip">🔒 Sem cadastro</div>
@@ -235,81 +164,53 @@ hr{border:0;border-top:1px solid var(--border);margin:18px 0}
     </div>
 
     <div class="market">
-      <p class="marketTitle">🛍️ Você vai ver ofertas e cupons como estes (sem parceria oficial):</p>
+      <p class="marketTitle">🛍️ Ofertas comuns nos maiores sites (sem parceria oficial)</p>
       <div class="marketRow">
-        <span class="mtag"><span class="dotLogo"></span> Mercado Livre</span>
-        <span class="mtag"><span class="dotLogo"></span> Shopee</span>
-        <span class="mtag"><span class="dotLogo"></span> Amazon</span>
-        <span class="mtag"><span class="dotLogo"></span> Magalu</span>
-        <span class="mtag"><span class="dotLogo"></span> Shein</span>
+        <span class="mtag">Mercado Livre</span>
+        <span class="mtag">Shopee</span>
+        <span class="mtag">Amazon</span>
+        <span class="mtag">Magalu</span>
+        <span class="mtag">Shein</span>
       </div>
     </div>
-
-    <hr>
-
-    <p class="proofTitle">📸 Exemplos reais do grupo</p>
-    <p class="proofSub">Veja o que você vai receber</p>
 
     <div class="slider">
       <div class="slides" id="slides">
-        <div class="slide">
-          <img src="https://i.postimg.cc/0NcLSq4Z/Whats-App-Image-2026-01-07-at-14-35-37.png" alt="Oferta 1">
-        </div>
-        <div class="slide">
-          <img src="https://i.postimg.cc/bv3Knj57/Whats-App-Image-2026-01-07-at-14-35-46.png" alt="Oferta 2">
-        </div>
-        <div class="slide">
-          <img src="https://i.postimg.cc/nL06mt58/Whats-App-Image-2026-01-07-at-14-36-15.png" alt="Oferta 3">
-        </div>
+        <div class="slide"><img src="https://i.postimg.cc/0NcLSq4Z/Whats-App-Image-2026-01-07-at-14-35-37.png"></div>
+        <div class="slide"><img src="https://i.postimg.cc/bv3Knj57/Whats-App-Image-2026-01-07-at-14-35-46.png"></div>
+        <div class="slide"><img src="https://i.postimg.cc/nL06mt58/Whats-App-Image-2026-01-07-at-14-36-15.png"></div>
       </div>
     </div>
-
-    <div class="dots" id="dots">
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-
-    <div class="note">
-      Dica: se abrir no navegador, toque em “Abrir no WhatsApp”.
-    </div>
-
   </div>
 
   <div class="footer">
     Instagram:
-    <a href="https://www.instagram.com/temdetudoofertas_2026" target="_blank" rel="noopener">@temdetudoofertas_2026</a><br>
+    <a href="https://www.instagram.com/temdetudoofertas_2026" target="_blank">@temdetudoofertas_2026</a><br>
     Página informativa. Nenhuma promessa de ganhos.
   </div>
 </div>
 
 <script>
 const DESTINO="https://chat.whatsapp.com/IHJfaoxMAU1Dj9cKWMDdkt";
-const btn=document.getElementById("go");
-btn.href=DESTINO;
+document.getElementById("go").href=DESTINO;
 
-// Redirect
-let t=15;
+let t=25;
 const status=document.getElementById("status");
 const timer=setInterval(()=>{
   t--;
-  status.innerHTML = `Redirecionamento automático em <strong>${t}s</strong>…`;
+  status.innerHTML=`Redirecionamento automático em <strong>${t}s</strong>…`;
   if(t<=0){
     clearInterval(timer);
     window.location.href=DESTINO;
   }
 },1000);
 
-// Slider
 let i=0;
-const total=3;
 setInterval(()=>{
   const slides=document.getElementById("slides");
-  const dots=document.querySelectorAll("#dots .dot");
-  i=(i+1)%total;
+  i=(i+1)%3;
   slides.style.transform=`translateX(-${i*100}%)`;
-  dots.forEach((d,idx)=>d.classList.toggle("active", idx===i));
-},2800);
+},2600);
 </script>
 </body>
 </html>
