@@ -1,0 +1,548 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grupo VIP – Figurinhas da Copa</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1233424312010019');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1233424312010019&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde: #009c3b;
+  --amarelo: #FFDF00;
+  --azul: #002776;
+  --azul2: #003a99;
+  --dourado: #d4a017;
+  --dourado2: #f5c842;
+  --bg: #001a4d;
+  --card: rgba(0,15,50,.85);
+  --border: rgba(255,223,0,.18);
+  --text: #fff;
+  --muted: rgba(255,255,255,.75);
+  --cta: #FFDF00;
+  --ctaText: #001a4d;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Barlow', Arial, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 800px 500px at 50% 0%, rgba(0,156,59,.28) 0%, transparent 65%),
+    radial-gradient(ellipse 600px 400px at 80% 80%, rgba(212,160,23,.18) 0%, transparent 60%),
+    linear-gradient(175deg, #001233 0%, #001a4d 40%, #002060 100%);
+  overflow-x: hidden;
+}
+
+/* ===== CAMPO SVG BG ===== */
+.field-bg {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0; opacity: .055;
+}
+
+.container { max-width: 540px; margin: auto; padding: 20px 16px 40px; position: relative; z-index: 1; }
+
+/* ===== TROPHY HEADER ===== */
+.trophy-header {
+  text-align: center;
+  padding: 28px 0 12px;
+  position: relative;
+}
+.trophy-icon {
+  font-size: 64px;
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 4px 24px rgba(212,160,23,.7));
+  animation: pulse-trophy 2.4s ease-in-out infinite;
+}
+@keyframes pulse-trophy {
+  0%,100% { transform: scale(1); filter: drop-shadow(0 4px 24px rgba(212,160,23,.7)); }
+  50% { transform: scale(1.07); filter: drop-shadow(0 8px 36px rgba(212,160,23,1)); }
+}
+.country-flags {
+  display: flex; justify-content: center; gap: 6px; margin: 8px 0 0;
+  font-size: 22px; letter-spacing: 2px;
+}
+
+/* ===== MAIN CARD ===== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 26px 22px 22px;
+  box-shadow: 0 20px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,223,0,.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--verde), var(--amarelo), var(--verde));
+}
+
+/* ===== BADGES ===== */
+.badges {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 7px;
+  margin-bottom: 18px;
+}
+.badge {
+  background: rgba(255,223,0,.10);
+  border: 1px solid rgba(255,223,0,.25);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: var(--amarelo);
+}
+
+/* ===== HEADLINE ===== */
+.headline {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(30px, 8vw, 42px);
+  letter-spacing: 1.5px;
+  line-height: 1.05;
+  color: var(--amarelo);
+  text-shadow: 0 3px 16px rgba(212,160,23,.5);
+  margin-bottom: 6px;
+}
+.headline span { color: #fff; }
+
+.sub {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+.sub strong { color: var(--amarelo); font-weight: 700; }
+
+/* ===== FIGURINHA SHOWCASE ===== */
+.sticker-row {
+  display: flex; justify-content: center; gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.sticker-card {
+  width: 80px;
+  background: linear-gradient(160deg, #003a99 0%, #001a4d 100%);
+  border: 2px solid rgba(255,223,0,.35);
+  border-radius: 10px;
+  padding: 8px 6px 6px;
+  text-align: center;
+  position: relative;
+  transition: transform .25s;
+}
+.sticker-card:hover { transform: translateY(-4px) rotate(-2deg); }
+.sticker-card:nth-child(2):hover { transform: translateY(-4px) rotate(2deg); }
+.sticker-card:nth-child(3):hover { transform: translateY(-4px) rotate(-1deg); }
+.sticker-card:nth-child(4):hover { transform: translateY(-4px) rotate(3deg); }
+.sticker-flag { font-size: 28px; display: block; margin-bottom: 3px; }
+.sticker-name { font-size: 9px; font-weight: 700; letter-spacing: .5px; color: var(--amarelo); }
+.sticker-num {
+  position: absolute; top: -7px; right: -7px;
+  background: var(--verde);
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  width: 20px; height: 20px;
+  font-size: 10px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.sticker-shine {
+  position: absolute; inset: 0; border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255,255,255,.13) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* ===== VALUE LIST ===== */
+.value-list { display: grid; gap: 9px; margin-bottom: 20px; }
+.value-item {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,223,0,.12);
+  border-radius: 13px;
+  padding: 13px 14px;
+  display: flex; gap: 11px; align-items: center;
+}
+.value-icon {
+  min-width: 32px; height: 32px;
+  background: rgba(0,156,59,.22);
+  border: 1px solid rgba(0,156,59,.35);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.value-item b { font-size: 14px; font-weight: 700; display: block; }
+.value-item span { font-size: 12px; color: var(--muted); }
+
+/* ===== PRICE COMPARE ===== */
+.price-box {
+  background: rgba(0,156,59,.12);
+  border: 1px dashed rgba(0,156,59,.4);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.price-box .label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.price-compare {
+  display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap;
+}
+.price-old {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  color: rgba(255,255,255,.4);
+  text-decoration: line-through;
+}
+.price-arrow { font-size: 20px; }
+.price-new {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--amarelo);
+  text-shadow: 0 2px 12px rgba(212,160,23,.5);
+}
+.price-note { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* ===== CTA ===== */
+.cta-wrap { position: relative; margin: 6px 0; }
+.cta-glow {
+  position: absolute; inset: -4px;
+  background: radial-gradient(ellipse, rgba(0,156,59,.45), transparent 70%);
+  border-radius: 18px;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+@keyframes glow-pulse {
+  0%,100% { opacity: .7; }
+  50% { opacity: 1; }
+}
+.btn {
+  display: block;
+  background: linear-gradient(135deg, var(--amarelo) 0%, #ffe066 60%, #f5c842 100%);
+  color: var(--ctaText);
+  text-align: center;
+  padding: 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  position: relative;
+  box-shadow: 0 8px 28px rgba(212,160,23,.45);
+  transition: transform .15s;
+}
+.btn:active { transform: translateY(2px); }
+.btn-icon { font-size: 20px; vertical-align: -2px; margin-right: 6px; }
+
+.countdown-line {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0 16px;
+}
+.countdown-line strong { color: #fff; font-weight: 700; }
+
+/* ===== TRUST CHIPS ===== */
+.trust {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 7px;
+  margin-bottom: 18px;
+}
+.chip {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== ONDE ENCONTRAR ===== */
+.where-title {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 9px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+.where-tags {
+  display: flex; flex-wrap: wrap; gap: 7px; justify-content: center;
+}
+.wtag {
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.10);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===== SLIDER ===== */
+.slider-wrap {
+  margin-top: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.slides { display: flex; transition: transform .5s ease; }
+.slide { min-width: 100%; display: flex; justify-content: center; padding: 14px 0; }
+.slide img { width: 74%; max-width: 340px; border-radius: 10px; }
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 16px;
+  font-size: 11px;
+  text-align: center;
+  color: rgba(255,255,255,.55);
+  line-height: 1.7;
+}
+.footer a { color: var(--amarelo); text-decoration: none; }
+
+/* ===== CONFETTI PARTICLES ===== */
+.particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.particle {
+  position: absolute;
+  width: 6px; height: 6px;
+  border-radius: 1px;
+  opacity: 0;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  0%   { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+  10%  { opacity: .8; }
+  90%  { opacity: .6; }
+  100% { opacity: 0; transform: translateY(110vh) rotate(720deg); }
+}
+
+@media(max-width:400px){
+  .headline { font-size: 28px; }
+  .sticker-card { width: 66px; }
+  .card { padding: 20px 14px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Campo de futebol de fundo -->
+<svg class="field-bg" viewBox="0 0 540 960" preserveAspectRatio="xMidYMid slice">
+  <rect x="20" y="20" width="500" height="920" rx="18" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="270" cy="480" r="60" fill="none" stroke="white" stroke-width="2"/>
+  <line x1="20" y1="480" x2="520" y2="480" stroke="white" stroke-width="2"/>
+  <rect x="155" y="20" width="230" height="90" fill="none" stroke="white" stroke-width="2"/>
+  <rect x="205" y="20" width="130" height="45" fill="none" stroke="white" stroke-width="2"/>
+  <rect x="155" y="850" width="230" height="90" fill="none" stroke="white" stroke-width="2"/>
+  <rect x="205" y="895" width="130" height="45" fill="none" stroke="white" stroke-width="2"/>
+  <circle cx="270" cy="480" r="4" fill="white"/>
+  <circle cx="270" cy="128" r="4" fill="white"/>
+  <circle cx="270" cy="832" r="4" fill="white"/>
+</svg>
+
+<!-- Confetti -->
+<div class="particles" id="particles"></div>
+
+<div class="container">
+
+  <!-- Trofeu topo -->
+  <div class="trophy-header">
+    <span class="trophy-icon">🏆</span>
+    <div class="country-flags">🇧🇷 ⚽ 🌍</div>
+  </div>
+
+  <div class="card">
+
+    <div class="badges">
+      <div class="badge">⚽ Figurinhas da Copa</div>
+      <div class="badge">✅ 100% Gratuito Entrar</div>
+      <div class="badge">🔥 Grupo Exclusivo</div>
+    </div>
+
+    <h1 class="headline">Grupo VIP<br><span>Figurinhas</span> da Copa</h1>
+
+    <p class="sub">
+      Complete seu álbum pagando <strong>muito menos</strong>!<br>
+      Cupons secretos e ofertas que <strong>só existem aqui</strong>.
+    </p>
+
+    <!-- Figurinhas decorativas -->
+    <div class="sticker-row">
+      <div class="sticker-card">
+        <span class="sticker-flag">🇧🇷</span>
+        <div class="sticker-name">BRASIL</div>
+        <div class="sticker-num">10</div>
+        <div class="sticker-shine"></div>
+      </div>
+      <div class="sticker-card">
+        <span class="sticker-flag">⭐</span>
+        <div class="sticker-name">BRILHANTE</div>
+        <div class="sticker-num">★</div>
+        <div class="sticker-shine"></div>
+      </div>
+      <div class="sticker-card">
+        <span class="sticker-flag">🇦🇷</span>
+        <div class="sticker-name">ARGENTINA</div>
+        <div class="sticker-num">11</div>
+        <div class="sticker-shine"></div>
+      </div>
+      <div class="sticker-card">
+        <span class="sticker-flag">🌍</span>
+        <div class="sticker-name">ESPECIAL</div>
+        <div class="sticker-num">S</div>
+        <div class="sticker-shine"></div>
+      </div>
+    </div>
+
+    <!-- Benefícios -->
+    <div class="value-list">
+      <div class="value-item">
+        <div class="value-icon">🏷️</div>
+        <div>
+          <b>Cupons exclusivos do grupo</b>
+          <span>Descontos que não são divulgados fora daqui</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">📦</div>
+        <div>
+          <b>Envelopes e álbuns com até 60% off</b>
+          <span>Figurinhas avulsas, pacotinhos e álbum completo</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">⚡</div>
+        <div>
+          <b>Alertas em tempo real</b>
+          <span>Primeiro a saber quando estocar antes que acabe</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🌟</div>
+        <div>
+          <b>Figurinhas brilhantes e raras</b>
+          <span>Oportunidades nas figurinhas especiais da Copa</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparativo de preço -->
+    <div class="price-box">
+      <div class="label">💰 Exemplo de economia real no grupo</div>
+      <div class="price-compare">
+        <div class="price-old">R$89</div>
+        <div class="price-arrow">→</div>
+        <div class="price-new">R$34</div>
+      </div>
+      <div class="price-note">Álbum físico — com cupom exclusivo do grupo (valores ilustrativos)</div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-wrap">
+      <div class="cta-glow"></div>
+      <a id="go" class="btn" href="#" onclick="fbq('trackCustom','JoinGroup');">
+        <span class="btn-icon">💬</span>ENTRAR NO GRUPO AGORA
+      </a>
+    </div>
+
+    <p class="countdown-line" id="status">
+      Redirecionamento automático em <strong>25s</strong>…
+    </p>
+
+    <div class="trust">
+      <div class="chip">🔒 Sem cadastro</div>
+      <div class="chip">🚫 Sem spam</div>
+      <div class="chip">↩️ Sair quando quiser</div>
+      <div class="chip">📲 Só no WhatsApp</div>
+    </div>
+
+    <p class="where-title">🛒 Onde costumamos encontrar as ofertas</p>
+    <div class="where-tags">
+      <span class="wtag">Mercado Livre</span>
+      <span class="wtag">Shopee</span>
+      <span class="wtag">Amazon</span>
+      <span class="wtag">Magalu</span>
+      <span class="wtag">Americanas</span>
+    </div>
+
+    <!-- Slider de provas sociais -->
+    <div class="slider-wrap">
+      <div class="slides" id="slides">
+        <div class="slide"><img src="https://i.ibb.co/Q33JrsY1/Whats-App-Image-2026-05-31-at-11-10-59.jpg" alt="Prova 1"></div>
+        <div class="slide"><img src="https://i.ibb.co/9mbGc18y/Whats-App-Image-2026-05-31-at-11-10-08.jpg" alt="Prova 2"></div>
+        <div class="slide"><img src="https://i.ibb.co/jvW1C2TK/Whats-App-Image-2026-05-31-at-11-09-51.jpg" alt="Prova 3"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Instagram:
+    <a href="https://www.instagram.com/temdetudoofertas_2026" target="_blank">@temdetudoofertas_2026</a><br>
+    Página informativa. Sem parceria oficial com marcas citadas. Nenhuma promessa de ganhos.
+  </div>
+
+</div>
+
+<script>
+const DESTINO = "https://chat.whatsapp.com/DgWCcNdJPCv88TykO3kx70?s=sh&p=i&mlu=2&ilr=0";
+document.getElementById("go").href = DESTINO;
+
+// Countdown
+let t = 25;
+const status = document.getElementById("status");
+const timer = setInterval(() => {
+  t--;
+  status.innerHTML = `Redirecionamento automático em <strong>${t}s</strong>…`;
+  if (t <= 0) {
+    clearInterval(timer);
+    window.location.href = DESTINO;
+  }
+}, 1000);
+
+// Slider
+let i = 0;
+setInterval(() => {
+  const slides = document.getElementById("slides");
+  i = (i + 1) % 3;
+  slides.style.transform = `translateX(-${i * 100}%)`;
+}, 2800);
+
+// Confetti particles
+const colors = ['#FFDF00','#009c3b','#ffffff','#002776','#d4a017'];
+const container = document.getElementById('particles');
+for (let p = 0; p < 28; p++) {
+  const el = document.createElement('div');
+  el.className = 'particle';
+  el.style.left = Math.random() * 100 + 'vw';
+  el.style.top = '-10px';
+  el.style.background = colors[Math.floor(Math.random() * colors.length)];
+  el.style.width = (4 + Math.random() * 5) + 'px';
+  el.style.height = (4 + Math.random() * 5) + 'px';
+  el.style.animationDuration = (6 + Math.random() * 10) + 's';
+  el.style.animationDelay = (Math.random() * 8) + 's';
+  container.appendChild(el);
+}
+</script>
+</body>
+</html>
