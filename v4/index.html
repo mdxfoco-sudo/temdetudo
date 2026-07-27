@@ -308,7 +308,7 @@ body {
       </a>
     </div>
 
-    <p class="microcopy">Leva menos de <strong>10 segundos</strong> para entrar.</p>
+    <p class="microcopy" id="status">Redirecionamento automático em <strong>25 segundos</strong>...</p>
 
     <div class="trust">
       <div class="chip">🔒 Sem cadastro</div>
@@ -344,12 +344,46 @@ body {
 
 <script>
 const DESTINO = "https://chat.whatsapp.com/DgWCcNdJPCv88TykO3kx70?s=sh&p=i&mlu=2&ilr=0";
+
 const button = document.getElementById("go");
+const statusText = document.getElementById("status");
+
 button.href = DESTINO;
 
+// Redirecionamento automático em 25 segundos
+let secondsLeft = 25;
+
+const redirectTimer = setInterval(() => {
+  secondsLeft--;
+
+  statusText.innerHTML =
+    `Redirecionamento automático em <strong>${secondsLeft} segundo${secondsLeft === 1 ? "" : "s"}</strong>...`;
+
+  if (secondsLeft <= 0) {
+    clearInterval(redirectTimer);
+
+    if (typeof fbq === "function") {
+      fbq("trackCustom", "AutoRedirectSportsGroup");
+    }
+
+    window.location.href = DESTINO;
+  }
+}, 1000);
+
+// Ao clicar, cancela o contador e abre o grupo normalmente
+button.addEventListener("click", () => {
+  clearInterval(redirectTimer);
+
+  if (typeof fbq === "function") {
+    fbq("trackCustom", "JoinSportsGroup");
+  }
+});
+
+// Slider automático
 let slideIndex = 0;
 const slides = document.getElementById("slides");
 const totalSlides = slides.children.length;
+
 setInterval(() => {
   slideIndex = (slideIndex + 1) % totalSlides;
   slides.style.transform = `translateX(-${slideIndex * 100}%)`;
