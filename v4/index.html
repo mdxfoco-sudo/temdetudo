@@ -105,7 +105,7 @@ footer a{
 const DESTINO='https://chat.whatsapp.com/DgWCcNdJPCv88TykO3kx70?s=sh&p=i&mlu=2&ilr=0',btn=document.getElementById('go'),status=document.getElementById('status');
 function track(name){try{if(typeof fbq==='function')fbq('trackCustom',name)}catch(e){}}
 btn.addEventListener('click',()=>track('JoinGroup'));
-document.querySelector('.logo').addEventListener('click',()=>track('ClickLogo'));
+document.querySelector('.logo').addEventListener('click',()=>track('JoinGroup'));
 let seconds=17;const timer=setInterval(()=>{seconds--;status.innerHTML=`Redirecionamento automático em <strong>${seconds}s</strong>...`;if(seconds<=0){clearInterval(timer);window.location.href=DESTINO}},1000);
 
 let proofIndex=0;
