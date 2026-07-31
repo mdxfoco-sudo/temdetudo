@@ -66,8 +66,8 @@ footer a{color:#9fc0ff;text-decoration:none;font-weight:600}
 const DESTINO='https://chat.whatsapp.com/C96QijCpSUOFP0W9dw3pbQ?s=sh&p=i&mlu=0&ilr=0',btn=document.getElementById('go'),status=document.getElementById('status');
 function track(name){try{if(typeof fbq==='function')fbq('trackCustom',name)}catch(e){}}
 btn.addEventListener('click',()=>track('JoinGroup'));
-document.querySelector('.logo').addEventListener('click',()=>track('ClickLogo'));
-let seconds=17;const timer=setInterval(()=>{seconds--;status.innerHTML=`Redirecionamento automático em <strong>${seconds}s</strong>...`;if(seconds<=0){clearInterval(timer);track('AutoRedirectElectronicsGroup');window.location.href=DESTINO}},1000);
+document.querySelector('.logo').addEventListener('click',()=>track('JoinGroup'));
+let seconds=17;const timer=setInterval(()=>{seconds--;status.innerHTML=`Redirecionamento automático em <strong>${seconds}s</strong>...`;if(seconds<=0){clearInterval(timer);window.location.href=DESTINO}},1000);
 
 let proofIndex=0;
 setInterval(()=>{
