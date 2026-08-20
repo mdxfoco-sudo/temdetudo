@@ -1,5 +1,7 @@
 
 
+
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -212,6 +214,28 @@ h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px}
   h1{font-size:22px}
   .container{padding:14px}
 }
+
+.telegram-btn{
+  display:block;
+  background:#229ED9;
+  color:#ffffff;
+  text-align:center;
+  padding:16px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.4px;
+  margin:18px 0 14px;
+  box-shadow:0 12px 30px rgba(34,158,217,.40);
+  animation:telegramPulse 1.8s infinite;
+}
+.telegram-btn:active{transform:translateY(1px)}
+@keyframes telegramPulse{
+  0%{box-shadow:0 0 0 0 rgba(34,158,217,.55),0 12px 30px rgba(34,158,217,.40)}
+  70%{box-shadow:0 0 0 12px rgba(34,158,217,0),0 12px 30px rgba(34,158,217,.40)}
+  100%{box-shadow:0 0 0 0 rgba(34,158,217,0),0 12px 30px rgba(34,158,217,.40)}
+}
+
 </style>
 </head>
 
@@ -254,6 +278,10 @@ h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px}
       <div class="chip">↩️ Sair quando quiser</div>
     </div>
 
+    <a class="telegram-btn" href="https://t.me/somostemdetudo" target="_blank" rel="noopener">
+      ✈️ ENTRAR NO TELEGRAM
+    </a>
+
     <div class="market">
       <p class="marketTitle">🛍️ Ofertas comuns nos maiores sites (sem parceria oficial)</p>
       <div class="marketRow">
@@ -278,6 +306,8 @@ h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px}
   <div class="footer">
     Instagram:
     <a href="https://www.instagram.com/somostemdetudo" target="_blank" rel="noopener">@somostemdetudo</a><br>
+    Telegram:
+    <a href="https://t.me/somostemdetudo" target="_blank" rel="noopener">@somostemdetudo</a><br>
     Página informativa. Nenhuma promessa de ganhos.
   </div>
 </div>
