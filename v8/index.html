@@ -2,6 +2,8 @@
 
 
 
+
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -217,22 +219,30 @@ h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px}
 
 .telegram-btn{
   display:block;
-  background:#229ED9;
-  color:#ffffff;
+  width:max-content;
+  max-width:100%;
+  margin:14px auto 12px;
+  padding:9px 14px;
+  background:rgba(34,158,217,.10);
+  color:#7dd3fc;
+  border:1px solid rgba(34,158,217,.35);
+  border-radius:999px;
   text-align:center;
-  padding:16px;
-  border-radius:14px;
   text-decoration:none;
-  font-weight:900;
-  letter-spacing:.4px;
-  margin:18px 0 14px;
-  box-shadow:0 12px 30px rgba(34,158,217,.40);
-  animation:telegramPulse 1.8s infinite;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.1px;
+  box-shadow:none;
+  animation:none;
 }
-.telegram-btn:active{transform:translateY(1px)}
-@keyframes telegramPulse{
-  0%{box-shadow:0 0 0 0 rgba(34,158,217,.55),0 12px 30px rgba(34,158,217,.40)}
-  70%{box-shadow:0 0 0 12px rgba(34,158,217,0),0 12px 30px rgba(34,158,217,.40)}
+.telegram-btn:hover{
+  background:rgba(34,158,217,.16);
+}
+.telegram-btn:active{
+  transform:translateY(1px);
+}
+
+70%{box-shadow:0 0 0 12px rgba(34,158,217,0),0 12px 30px rgba(34,158,217,.40)}
   100%{box-shadow:0 0 0 0 rgba(34,158,217,0),0 12px 30px rgba(34,158,217,.40)}
 }
 
@@ -249,7 +259,7 @@ h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px}
     </div>
 
     <div class="topline">
-      <div class="badge">🎯 Ofertas no WhatsApp</div>
+      <div class="badge">📲 Grupo de ofertas no WhatsApp</div>
       <div class="badge">✅ 100% Gratuito</div>
     </div>
 
@@ -267,7 +277,7 @@ h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px}
     </div>
 
     <a id="go" class="btn" href="#" onclick="fbq('trackCustom','JoinGroup');">
-      ACESSAR OFERTAS AGORA
+      ENTRAR NO GRUPO DO WHATSAPP
     </a>
 
     <p class="small" id="status">Redirecionamento automático em <strong>25s</strong>…</p>
@@ -279,7 +289,7 @@ h1{font-size:24px;line-height:1.2;text-align:center;margin:8px 0 12px}
     </div>
 
     <a class="telegram-btn" href="https://t.me/somostemdetudo" target="_blank" rel="noopener">
-      ✈️ ENTRAR NO TELEGRAM
+      ✈️ Também prefere Telegram? Entrar no canal
     </a>
 
     <div class="market">
